@@ -635,13 +635,13 @@ async function go(next){
   stage.classList.add('out');
   await wait(480);
 
-  // Removemos o forçamento bruto de scroll para cima aqui.
-  // A posição atual mantém-se de forma fluida e natural.
-
   screen = next;
   stage.classList.remove('out');
   stage.classList.add('in');
   render();
+
+  // Faz scroll suave para o topo da área de votação sempre que muda de etapa ou volta atrás
+  smoothScroller.scrollTo(0);
 
   await nextFrame();
   stage.classList.remove('in');
