@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#1b130f">
-<meta name="description" content="Escolhe o suplemento e o sabor da primeira goma Orvae.">
-<title>Orvae — A primeira goma começa contigo</title>
+<meta name="description" content="Escolhe o suplemento e o sabor da primeira goma Sthenos.">
+<title>Sthenos — A primeira goma começa contigo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
@@ -274,7 +274,7 @@ body.participating .top{
 
 /* Caixinhas com elevação lenta, suave e contínua */
 .choice{
-  width:100%;min-width:0;min-height:320px;padding:18px 18px 20px;border:1px solid rgba(79,63,53,.075);
+  width:100%;min-width:0;min-height:310px;padding:18px 18px 20px;border:1px solid rgba(79,63,53,.075);
   text-align:left;background:linear-gradient(180deg,#fffefb 0%,#f7f1e8 100%);
   border-radius:28px;box-shadow:0 10px 28px rgba(67,46,30,.05), inset 0 1px 0 rgba(255,255,255,.65);
   position:relative;isolation:isolate;overflow:hidden;
@@ -331,7 +331,7 @@ body.participating .top{
 }
 
 .card-top{position:relative;z-index:2}
-.photo{height:164px;border-radius:22px;position:relative;overflow:hidden;margin-bottom:18px;background-color:#eadfcf;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 -10px 24px rgba(73,45,28,.06)}
+.photo{height:150px;border-radius:22px;position:relative;overflow:hidden;margin-bottom:16px;background-color:#eadfcf;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 -10px 24px rgba(73,45,28,.06)}
 .photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.04) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,.08) 100%);pointer-events:none}
 .photo-img{
   width:100%;height:100%;display:block;object-fit:cover;object-position:center center;
@@ -346,20 +346,20 @@ body.participating .top{
   backdrop-filter:blur(4px);font-size:10px;font-weight:800;letter-spacing:.15em;color:#4a3020;text-transform:uppercase;
   box-shadow:0 6px 16px rgba(64,42,27,.06);z-index:2
 }
-.choice h3{position:relative;z-index:2;font-family:'Playfair Display',Georgia,serif;letter-spacing:-.035em;font-size:27px;font-weight:500;line-height:1.1;margin:0 0 11px;color:var(--ink)}
-.choice p{position:relative;z-index:2;margin:0;color:var(--muted);line-height:1.58;font-size:12px;min-height:38px}
+.choice h3{position:relative;z-index:2;font-family:'Playfair Display',Georgia,serif;letter-spacing:-.035em;font-size:24px;font-weight:500;line-height:1.1;margin:0 0 9px;color:var(--ink)}
+.choice p{position:relative;z-index:2;margin:0;color:var(--muted);line-height:1.5;font-size:12px;min-height:36px}
 .choose{
-  position:relative;z-index:2;display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:9px 15px;border-radius:40px;
+  position:relative;z-index:2;display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:8px 14px;border-radius:40px;
   background:#eee9df;color:#4a3020;font-size:11px;font-weight:700;
   transition:background 0.75s ease, color 0.75s ease, transform 0.95s var(--silk), box-shadow 0.75s ease
 }
 .choice:hover .choose,
 .choice.picked .choose{background:#d8bea0;color:#362115;transform:translateX(4px);box-shadow:0 10px 18px rgba(88,67,48,.08)}
 
-.flavor .choice{min-height:272px}
+.flavor .choice{min-height:245px}
 .flavor .choice p{min-height:0}
-.flavor .choice h3{font-size:25px}
-.flavor .choose{margin-top:13px}
+.flavor .choice h3{font-size:23px}
+.flavor .choose{margin-top:12px}
 
 .stage-actions{margin-top:34px;display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap}
 .secondary{
@@ -419,12 +419,15 @@ footer strong{font-family:'Playfair Display',Georgia,serif;font-weight:500;color
   .choices{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:560px){
-  .wrap{width:calc(100% - 24px)}
-  .hero h1{font-size:clamp(36px,10.5vw,56px)}
-  .hero p{font-size:15px}
-  .choices{grid-template-columns:1fr}
-  .choice{min-height:292px}
-  .flavor .choice{min-height:252px}
+  .wrap{width:calc(100% - 20px)}
+  .hero h1{font-size:clamp(32px,9vw,48px)}
+  .hero p{font-size:14px}
+  .choices{grid-template-columns:1fr;gap:14px}
+  .choice{min-height:auto;padding:16px}
+  .flavor .choice{min-height:auto}
+  .photo{height:140px}
+  .choice h3{font-size:22px}
+  .choice p{font-size:12px;min-height:0}
   footer .wrap{flex-direction:column}
 }
 </style>
@@ -432,7 +435,7 @@ footer strong{font-family:'Playfair Display',Georgia,serif;font-weight:500;color
 <body>
 <div class="site-header">
   <header class="wrap">
-    <a class="wordmark" href="#" data-home>Orvae.</a>
+    <a class="wordmark" href="#" data-home>Sthenos.</a>
     <div class="header-right">
       <div class="header-label">EM BREVE · GOMAS PREMIUM</div>
     </div>
@@ -458,7 +461,7 @@ footer strong{font-family:'Playfair Display',Georgia,serif;font-weight:500;color
 </div>
 
 <footer>
-  <div class="wrap"><strong>Orvae.</strong><span>UMA IDEIA A GANHAR FORMA · PORTUGAL © 2026</span></div>
+  <div class="wrap"><strong>Sthenos.</strong><span>UMA IDEIA A GANHAR FORMA · PORTUGAL © 2026</span></div>
 </footer>
 
 <script>
@@ -591,7 +594,7 @@ function productArt(item){
   return `<div class="photo"><img class="photo-img" src="${clean(item.image)}" alt="" loading="lazy"><div class="product-chip">${clean(item.tag)}</div></div>`;
 }
 function flavorArt(item){
-  return `<div class="photo"><img class="photo-img" src="${clean(item.image)}" alt="" loading="lazy"><div class="product-chip">Sabor</div></div>`;
+  return `<div class="photo"><img class="photo-img" src="${clean(item.image)}" alt="" loading="lazy"></div>`;
 }
 function card(item,i){
   const selected = (screen===0 ? selection.product : selection.flavor)===item.id;
@@ -722,7 +725,7 @@ async function resetToHome(){
 
   selection = {product:null, flavor:null};
   submitted = false;
-  sessionStorage.removeItem('orvae-vote-id');
+  sessionStorage.removeItem('sthenos-vote-id');
   screen = 0;
 
   heroSection.classList.add('is-entering');
@@ -747,8 +750,8 @@ async function sendVote(){
     const url = SUPABASE.url.replace(/\/(?:rest\/v1\/?)*$/,'').replace(/\/+$/,'');
     const key = SUPABASE.publishableKey;
     if(!/^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(url) || !key || !(/^(sb_publishable_|eyJ)/.test(key))) throw new Error('Configuração pública do Supabase inválida.');
-    let submissionId=sessionStorage.getItem('orvae-vote-id');
-    if(!submissionId){submissionId=crypto.randomUUID();sessionStorage.setItem('orvae-vote-id',submissionId)}
+    let submissionId=sessionStorage.getItem('sthenos-vote-id');
+    if(!submissionId){submissionId=crypto.randomUUID();sessionStorage.setItem('sthenos-vote-id',submissionId)}
     const controller=new AbortController(); const timeout=setTimeout(()=>controller.abort(),12000);
     let response;
     try{
