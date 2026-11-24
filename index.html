@@ -635,9 +635,8 @@ async function go(next){
   stage.classList.add('out');
   await wait(480);
 
-  if(window.scrollY > 10){
-    smoothScroller.scrollTo(0);
-  }
+  // Removemos o forçamento bruto de scroll para cima aqui.
+  // A posição atual mantém-se de forma fluida e natural.
 
   screen = next;
   stage.classList.remove('out');
