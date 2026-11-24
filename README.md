@@ -1,30 +1,28 @@
-# ORVAE V8 — Maçã
+# Sthenos 🌿
 
-Esta versão mantém as 8 opções de suplementos e troca apenas o sabor **Baunilha** por **Maçã**.
+> A tua próxima goma favorita começa aqui.
 
-Também mantém as tuas alterações textuais: **A escolha é tua** (sem Edição 001) e **Escolhe uma opção para continuar.**
+**Sthenos** is an interactive, exploratory voting web application where users can choose their preferred dietary supplement and ideal flavor for an upcoming line of premium gummies. 
 
-## Instalação
+## ✨ Features
 
-1. Na pasta clonada do GitHub (`form-lab-publicar`), substitui o `index.html` pela versão deste ZIP.
-2. Copia **`assets/flavor-maca.webp`** para a pasta `assets/` existente. As outras imagens são iguais à V7. O ZIP também as inclui caso precises.
-3. Podes eliminar `assets/flavor-baunilha.png` — já não é usado.
-4. Abre o Supabase → **SQL Editor** e executa o conteúdo de **`supabase-atualizar-maca.sql`**. Isto é necessário porque a função e a tabela antigas rejeitam o novo sabor `maca`. Esta atualização também autoriza `melatonina`, que foi adicionada na V7, e mantém todos os votos anteriores.
-5. Faz push da pasta clonada:
+- **Cinematic Transitions:** Smooth screen transitions and page transformations built with modern CSS and JavaScript.
+- **Inertia-Based Smooth Scrolling:** Custom momentum scroll handler for a fluid browsing experience.
+- **Responsive Design:** Optimized for both desktop and mobile devices with adaptive card layouts.
+- **Supabase Integration:** Securely saves user votes in real-time via Supabase RPC endpoints (`submit_orvae_vote`).
+- **Session Management:** Prevents duplicate submissions per session using `sessionStorage`.
 
-```powershell
-git add -A
-git commit -m "Orvae V8 - trocar baunilha por maca"
-git push origin main
-```
+## 🛠️ Tech Stack
 
-6. Após o GitHub Pages atualizar, testa Maçã e confirma em Supabase → SQL Editor:
+- **HTML5 & CSS3** (Custom Properties, Flexbox, CSS Grid)
+- **Vanilla JavaScript** (ES Modules, Async/Await)
+- **Supabase** (Database & Backend-as-a-Service)
+- **Google Fonts** (*Playfair Display* & *DM Sans*)
 
-```sql
-SELECT supplement, flavor, created_at
-FROM public.orvae_votes
-ORDER BY created_at DESC
-LIMIT 10;
-```
+## 🚀 Getting Started
 
-O site continua a ser um único `index.html`. Apenas a página muda; a tabela existente não é recriada nem os votos anteriores apagados.
+To run or deploy this project locally, simply clone this repository and open the `index.html` file in any modern web browser or serve it via a local static server (e.g., Live Server in VS Code).
+
+```bash
+git clone [https://github.com/your-username/sthenos.git](https://github.com/your-username/sthenos.git)
+cd sthenos
