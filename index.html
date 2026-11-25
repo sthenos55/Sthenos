@@ -27,8 +27,9 @@ body{
   color:var(--ink);
   font-family:'DM Sans',Arial,sans-serif;
   -webkit-font-smoothing:antialiased;
-  height:100dvh;
-  overflow:hidden;
+  min-height:100vh;
+  overflow-x:hidden;
+  overflow-y:auto;
   scrollbar-gutter:stable;
   display:flex;
   flex-direction:column;
@@ -36,10 +37,6 @@ body{
 }
 body.participating{
   background:var(--cream);
-  height:auto;
-  min-height:100dvh;
-  overflow-x:hidden;
-  overflow-y:auto;
 }
 button{font:inherit;cursor:pointer}
 button:focus-visible,a:focus-visible{outline:3px solid #ba8c51;outline-offset:5px}
@@ -74,7 +71,7 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
 /* Capa / Hero com transição cinematográfica imersiva */
 .top {
   position: relative;
-  flex: 1;
+  min-height: calc(100vh - 76px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -387,19 +384,30 @@ body.participating .top{
 .thanks p{line-height:1.8;color:var(--muted)}
 .thanks .summary{padding:15px 20px;border-radius:14px;background:#f2ece3;margin:24px auto;font-size:14px;color:var(--ink)}
 
-/* Rodapé e letras pequenas (visíveis apenas no modo de votação) */
-.fine-print, footer{
-  display:none;
-  transition:opacity 0.6s var(--velvet), transform 0.7s var(--silk);
+/* Rodapé e letras pequenas visíveis apenas ao fazer scroll */
+.fine-print{
+  display:block;
+  text-align:center;
+  color:#9b9185;
+  font-size:11px;
+  line-height:1.8;
+  padding:24px 20px;
+  background:var(--brown);
+  border-top:1px solid rgba(255,255,255,0.06);
+  transition:background-color 0.85s var(--velvet), color 0.5s ease;
 }
-body.participating .fine-print{display:block;text-align:center;color:#9b9185;font-size:11px;line-height:1.8;padding:20px 20px 56px}
-body.participating footer{display:block;background:#1b130f;color:#c7b2a2;padding:29px 0}
-.canvas.is-leaving ~ .fine-print,
-.canvas.is-leaving ~ footer{
-  opacity:0;
-  transform:translateY(24px);
+body.participating .fine-print{
+  background:var(--cream);
+  color:#9b9185;
+  border-top:none;
 }
-footer .wrap{display:flex;justify-content:space-between;gap:20px;font-size:11px;letter-spacing:.08em}
+footer{
+  display:block;
+  background:#1b130f;
+  color:#c7b2a2;
+  padding:26px 0;
+}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:11px;letter-spacing:.08em}
 footer strong{font-family:'Cinzel',Georgia,serif;font-weight:500;color:white;font-size:18px;letter-spacing:.04em}
 .hidden,[hidden]{display:none!important}
 
