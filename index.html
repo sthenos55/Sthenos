@@ -509,7 +509,7 @@ const wait = (ms) => new Promise(r => setTimeout(r, ms));
 const nextFrame = () => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
 const clean = (s) => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
-/* Smooth Scroll com inércia para roda do rato e teclado nas páginas de votação */
+/* Smooth Scroll com inércia ativa em todo o site (capa e votação) */
 const smoothScroller = (() => {
   let targetY = 0;
   let currentY = 0;
@@ -539,8 +539,8 @@ const smoothScroller = (() => {
   }
 
   window.addEventListener('wheel', (e) => {
-    if (!document.body.classList.contains('participating')) return;
     if (e.ctrlKey || e.metaKey) return;
+    if (maxScroll() <= 0) return;
     e.preventDefault();
     if (!active) {
       currentY = window.scrollY;
@@ -552,7 +552,6 @@ const smoothScroller = (() => {
   }, { passive: false });
 
   window.addEventListener('keydown', (e) => {
-    if (!document.body.classList.contains('participating')) return;
     if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) return;
     const step = window.innerHeight * 0.72;
     let delta = 0;
@@ -563,7 +562,7 @@ const smoothScroller = (() => {
     else if (e.key === 'Home') { e.preventDefault(); smoothScroller.scrollTo(0); return; }
     else if (e.key === 'End') { e.preventDefault(); smoothScroller.scrollTo(maxScroll()); return; }
 
-    if (delta !== 0) {
+    if (delta !== 0 && maxScroll() > 0) {
       e.preventDefault();
       if (!active) {
         currentY = window.scrollY;
