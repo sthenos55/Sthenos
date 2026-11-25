@@ -8,7 +8,7 @@
 <title>Sthenos — A primeira goma começa contigo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --brown:#221611;--brown2:#39271f;--cream:#f3efe7;--paper:#fffefa;--gold:#ceb18b;
@@ -23,23 +23,17 @@ html{
 }
 body{
   margin:0;
-  background:var(--brown);
+  background:var(--cream);
   color:var(--ink);
   font-family:'DM Sans',Arial,sans-serif;
   -webkit-font-smoothing:antialiased;
-  height:100dvh;
-  overflow:hidden;
+  min-height:100dvh;
+  overflow-x:hidden;
+  overflow-y:auto;
   scrollbar-gutter:stable;
   display:flex;
   flex-direction:column;
   transition:background-color 0.85s var(--velvet);
-}
-body.participating{
-  background:var(--cream);
-  height:auto;
-  min-height:100dvh;
-  overflow-x:hidden;
-  overflow-y:auto;
 }
 button{font:inherit;cursor:pointer}
 button:focus-visible,a:focus-visible{outline:3px solid #ba8c51;outline-offset:5px}
@@ -59,8 +53,8 @@ button:disabled{cursor:not-allowed}
 }
 header{height:76px;display:flex;align-items:center;justify-content:space-between}
 .wordmark{
-  font:500 32px 'Playfair Display',Georgia,serif;
-  letter-spacing:-.04em;
+  font:500 28px 'Cinzel',Georgia,serif;
+  letter-spacing:.03em;
   color:#f7f1ea;
   cursor:pointer;
   display:inline-block;
@@ -71,15 +65,15 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
 .header-right{display:flex;align-items:center;gap:20px}
 .header-label{font-size:11px;letter-spacing:.22em;color:#e4d3c0;font-weight:600}
 
-/* Capa / Hero com transição cinematográfica */
+/* Capa / Hero com transição cinematográfica e altura que convida a um mini-scroll */
 .top {
   position: relative;
-  flex: 1;
+  min-height: calc(85dvh - 76px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: 
-    radial-gradient(circle at 50% 48%, rgba(28, 19, 14, 0.25) 0%, rgba(22, 14, 10, 0.72) 100%),
+    radial-gradient(circle at 50% 48%, rgba(28, 19, 14, 0.25) 0%, rgba(22, 14, 10, 0.74) 100%),
     url('assets/hero-bg.png') center center / cover no-repeat;
   color: var(--paper);
   overflow: hidden;
@@ -106,7 +100,7 @@ body.participating .top{
 }
 
 .hero{
-  padding:40px 0 60px;
+  padding:56px 0 72px;
   text-align:center;
   display:flex;
   flex-direction:column;
@@ -120,22 +114,22 @@ body.participating .top{
   text-transform:uppercase;
 }
 .hero h1,.stage h2,.thanks h2{
-  font-family:'Playfair Display',Georgia,serif;
+  font-family:'Cinzel',Georgia,serif;
   font-weight:500;
-  letter-spacing:-.035em;
-  line-height:1.06;
+  letter-spacing:-.01em;
+  line-height:1.12;
 }
 .hero h1{
-  font-size:clamp(44px,6vw,84px);
-  max-width:860px;
-  margin:20px auto 22px;
+  font-size:clamp(34px,4.8vw,68px);
+  max-width:920px;
+  margin:22px auto 24px;
   color:#fbf7f2;
   text-shadow:0 8px 32px rgba(0,0,0,0.35);
 }
 .hero h1 em,.stage h2 em,.thanks h2 em{
   color:#dfc2a0;
-  font-style:italic;
-  font-weight:400;
+  font-style:normal;
+  font-weight:600;
 }
 .hero p{
   max-width:560px;
@@ -150,7 +144,7 @@ body.participating .top{
 .hero-action{
   position:relative;
   overflow:hidden;
-  margin-top:34px;
+  margin-top:36px;
   display:inline-flex;
   align-items:center;
   justify-content:center;
@@ -217,7 +211,7 @@ body.participating .top{
 .canvas{
   position:relative;
   margin-top:0;
-  padding:54px 0 92px;
+  padding:54px 0 72px;
   min-height:470px;
   flex:1;
   opacity:1;
@@ -262,7 +256,7 @@ body.participating .top{
 }
 
 .stage-title{text-align:center}
-.stage h2{font-size:clamp(37px,5vw,66px);margin:0 0 14px;color:var(--ink)}
+.stage h2{font-size:clamp(30px,4vw,54px);margin:0 0 14px;color:var(--ink)}
 .stage-intro{margin:0 auto 36px;max-width:620px;text-align:center;font-size:14px;line-height:1.8;color:var(--muted)}
 .choices{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
 
@@ -346,7 +340,7 @@ body.participating .top{
   backdrop-filter:blur(4px);font-size:10px;font-weight:800;letter-spacing:.15em;color:#4a3020;text-transform:uppercase;
   box-shadow:0 6px 16px rgba(64,42,27,.06);z-index:2
 }
-.choice h3{position:relative;z-index:2;font-family:'Playfair Display',Georgia,serif;letter-spacing:-.035em;font-size:24px;font-weight:500;line-height:1.1;margin:0 0 9px;color:var(--ink)}
+.choice h3{position:relative;z-index:2;font-family:'Cinzel',Georgia,serif;letter-spacing:-.01em;font-size:21px;font-weight:600;line-height:1.15;margin:0 0 9px;color:var(--ink)}
 .choice p{position:relative;z-index:2;margin:0;color:var(--muted);line-height:1.5;font-size:12px;min-height:36px}
 .choose{
   position:relative;z-index:2;display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:8px 14px;border-radius:40px;
@@ -358,7 +352,7 @@ body.participating .top{
 
 .flavor .choice{min-height:245px}
 .flavor .choice p{min-height:0}
-.flavor .choice h3{font-size:23px}
+.flavor .choice h3{font-size:20px}
 .flavor .choose{margin-top:12px}
 
 .stage-actions{margin-top:34px;display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap}
@@ -383,24 +377,37 @@ body.participating .top{
   animation:card-in 0.85s var(--silk) both;
 }
 .thanks .seal{font-size:32px;color:#9e7552}
-.thanks h2{font-size:clamp(38px,5vw,58px);margin:15px 0;color:var(--ink)}
+.thanks h2{font-size:clamp(30px,4vw,46px);margin:15px 0;color:var(--ink)}
 .thanks p{line-height:1.8;color:var(--muted)}
 .thanks .summary{padding:15px 20px;border-radius:14px;background:#f2ece3;margin:24px auto;font-size:14px;color:var(--ink)}
 
-/* Rodapé e letras pequenas */
-.fine-print, footer{
-  display:none;
+/* Rodapé e letras pequenas visíveis tanto na capa como nas páginas de votação */
+.fine-print{
+  display:block;
+  text-align:center;
+  color:#9b9185;
+  font-size:11px;
+  line-height:1.8;
+  padding:28px 20px 44px;
+  margin-top:auto;
   transition:opacity 0.6s var(--velvet), transform 0.7s var(--silk);
 }
-body.participating .fine-print{display:block;text-align:center;color:#9b9185;font-size:11px;line-height:1.8;padding:20px 20px 56px}
-body.participating footer{display:block;background:#1b130f;color:#c7b2a2;padding:29px 0}
+footer{
+  display:block;
+  background:#1b130f;
+  color:#c7b2a2;
+  padding:29px 0;
+  transition:opacity 0.6s var(--velvet), transform 0.7s var(--silk);
+}
+.top.is-leaving ~ .fine-print,
+.top.is-leaving ~ footer,
 .canvas.is-leaving ~ .fine-print,
 .canvas.is-leaving ~ footer{
   opacity:0;
-  transform:translateY(24px);
+  transform:translateY(16px);
 }
-footer .wrap{display:flex;justify-content:space-between;gap:20px;font-size:11px}
-footer strong{font-family:'Playfair Display',Georgia,serif;font-weight:500;color:white;font-size:19px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:11px;letter-spacing:.08em}
+footer strong{font-family:'Cinzel',Georgia,serif;font-weight:500;color:white;font-size:18px;letter-spacing:.04em}
 .hidden,[hidden]{display:none!important}
 
 @keyframes card-in{
@@ -415,20 +422,21 @@ footer strong{font-family:'Playfair Display',Georgia,serif;font-weight:500;color
   .wrap{width:calc(100% - 40px)}
   header{height:70px}
   .header-label{display:none}
-  .hero{padding:32px 0 48px}
+  .top{min-height:calc(82dvh - 70px)}
+  .hero{padding:40px 0 56px}
   .choices{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:560px){
   .wrap{width:calc(100% - 20px)}
-  .hero h1{font-size:clamp(32px,9vw,48px)}
+  .hero h1{font-size:clamp(28px,8vw,42px)}
   .hero p{font-size:14px}
   .choices{grid-template-columns:1fr;gap:14px}
   .choice{min-height:auto;padding:16px}
   .flavor .choice{min-height:auto}
   .photo{height:140px}
-  .choice h3{font-size:22px}
+  .choice h3{font-size:20px}
   .choice p{font-size:12px;min-height:0}
-  footer .wrap{flex-direction:column}
+  footer .wrap{flex-direction:column;align-items:flex-start}
 }
 </style>
 </head>
@@ -461,7 +469,7 @@ footer strong{font-family:'Playfair Display',Georgia,serif;font-weight:500;color
 </div>
 
 <footer>
-  <div class="wrap"><strong>Sthenos.</strong><span>UMA IDEIA A GANHAR FORMA · PORTUGAL © 2026</span></div>
+  <div class="wrap"><strong>Sthenos.</strong><span>ESTUDO DE CONCEITO E MERCADO · PORTUGAL © 2026</span></div>
 </footer>
 
 <script>
@@ -501,7 +509,7 @@ const wait = (ms) => new Promise(r => setTimeout(r, ms));
 const nextFrame = () => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
 const clean = (s) => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
-/* Smooth Scroll com inércia para roda do rato e teclado nas páginas de votação */
+/* Smooth Scroll com inércia para roda do rato e teclado em toda a página */
 const smoothScroller = (() => {
   let targetY = 0;
   let currentY = 0;
@@ -531,8 +539,8 @@ const smoothScroller = (() => {
   }
 
   window.addEventListener('wheel', (e) => {
-    if (!document.body.classList.contains('participating')) return;
     if (e.ctrlKey || e.metaKey) return;
+    if (maxScroll() <= 0) return;
     e.preventDefault();
     if (!active) {
       currentY = window.scrollY;
@@ -544,7 +552,6 @@ const smoothScroller = (() => {
   }, { passive: false });
 
   window.addEventListener('keydown', (e) => {
-    if (!document.body.classList.contains('participating')) return;
     if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) return;
     const step = window.innerHeight * 0.72;
     let delta = 0;
@@ -555,7 +562,7 @@ const smoothScroller = (() => {
     else if (e.key === 'Home') { e.preventDefault(); smoothScroller.scrollTo(0); return; }
     else if (e.key === 'End') { e.preventDefault(); smoothScroller.scrollTo(maxScroll()); return; }
 
-    if (delta !== 0) {
+    if (delta !== 0 && maxScroll() > 0) {
       e.preventDefault();
       if (!active) {
         currentY = window.scrollY;
@@ -640,7 +647,6 @@ async function go(next){
   stage.classList.add('in');
   render();
 
-  // Faz scroll suave para o topo da área de votação sempre que muda de etapa ou volta atrás
   smoothScroller.scrollTo(0);
 
   await nextFrame();
