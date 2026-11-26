@@ -96,9 +96,6 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
   filter: blur(6px);
   transition: none !important;
 }
-body.participating .top{
-  display: none;
-}
 
 .hero{
   padding:10px 0 40px;
@@ -215,12 +212,12 @@ body.participating .top{
   z-index:-1;
 }
 
-/* Área de Votação e Transições entre Etapas (Preto e Dourado) */
+/* Área de Votação (Ecrã dinâmico) */
 .canvas{
   position:relative;
   margin-top:0;
   padding:64px 0 92px;
-  min-height:470px;
+  min-height: calc(100vh - 76px);
   flex:1;
   opacity:1;
   transform:translateY(0) scale(1);
@@ -420,7 +417,7 @@ body.participating .top{
 .thanks p{line-height:1.8;color:var(--muted)}
 .thanks .summary{padding:15px 20px;border-radius:14px;background:#1c1917;border:1px solid rgba(206,177,139,0.25);margin:24px auto;font-size:14px;color:var(--gold-light)}
 
-/* Rodapé e letras pequenas com o tom preto puro (#0a0a0a) */
+/* Rodapé e letras pequenas */
 .fine-print{
   display:block;
   text-align:center;
@@ -736,6 +733,7 @@ async function enterVoting(){
 
   votingSection.classList.add('is-entering');
   votingSection.hidden = false;
+  heroSection.style.display = 'none'; // Esconde a capa completamente para a votação ocupar o ecrã
   heroSection.classList.remove('is-leaving');
   smoothScroller.scrollTo(0, true);
   render();
@@ -759,6 +757,7 @@ async function resetToHome(){
   sessionStorage.removeItem('sthenos-vote-id');
   screen = 0;
 
+  heroSection.style.display = 'flex'; // Restaura a capa
   heroSection.classList.add('is-entering');
   votingSection.hidden = true;
   votingSection.classList.remove('is-leaving');
