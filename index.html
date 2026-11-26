@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#1b130f">
+<meta name="theme-color" content="#0a0a0a">
 <meta name="description" content="Escolhe o suplemento e o sabor da primeira goma Sthenos.">
 <title>Sthenos — A primeira goma começa contigo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,8 +11,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --brown:#221611;--brown2:#39271f;--cream:#f3efe7;--paper:#fffefa;--gold:#ceb18b;
-  --ink:#362115;--muted:#7d6657;
+  --black:#0a0a0a;--black2:#121212;--dark-card:#141414;--cream:#f3efe7;--paper:#fffefa;--gold:#ceb18b;--gold-light:#e2bd8d;
+  --ink:#f2eee9;--muted:#a39485;
   --silk:cubic-bezier(0.16, 1, 0.3, 1);
   --velvet:cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -23,7 +23,7 @@ html{
 }
 body{
   margin:0;
-  background:var(--brown);
+  background:var(--black);
   color:var(--ink);
   font-family:'DM Sans',Arial,sans-serif;
   -webkit-font-smoothing:antialiased;
@@ -37,18 +37,19 @@ body{
 }
 body.participating{
   background:var(--cream);
+  color:#362115;
 }
 button{font:inherit;cursor:pointer}
-button:focus-visible,a:focus-visible{outline:3px solid #ba8c51;outline-offset:5px}
+button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:5px}
 a{text-decoration:none;color:inherit}
 button:disabled{cursor:not-allowed}
-::selection{background:#d7b48d;color:#362115}
+::selection{background:var(--gold);color:var(--black)}
 .wrap{width:min(1250px,calc(100% - 72px));margin:0 auto}
 
-/* Barra de topo */
+/* Barra de topo minimalista */
 .site-header{
-  background:#1b130f;
-  border-bottom:1px solid rgba(255,255,255,0.06);
+  background:var(--black);
+  border-bottom:1px solid rgba(206,177,139,0.12);
   position:relative;
   z-index:20;
   flex-shrink:0;
@@ -57,8 +58,8 @@ button:disabled{cursor:not-allowed}
 header{height:76px;display:flex;align-items:center;justify-content:space-between}
 .wordmark{
   font:700 28px 'Cinzel Decorative',Georgia,serif;
-  letter-spacing:.03em;
-  color:#f7f1ea;
+  letter-spacing:.04em;
+  color:#fcf9f5;
   cursor:pointer;
   display:inline-block;
   transition:opacity .4s ease, transform .5s var(--silk);
@@ -66,9 +67,9 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
 .wordmark:hover{opacity:.82}
 .wordmark:active{transform:scale(.96)}
 .header-right{display:flex;align-items:center;gap:20px}
-.header-label{font-size:11px;letter-spacing:.22em;color:#e4d3c0;font-weight:600}
+.header-label{font-size:11px;letter-spacing:.22em;color:var(--gold);font-weight:600}
 
-/* Capa / Hero com transição cinematográfica imersiva */
+/* Capa / Hero com transição cinematográfica imersiva preta e dourada */
 .top {
   position: relative;
   min-height: calc(100vh - 76px);
@@ -76,7 +77,7 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
   flex-direction: column;
   justify-content: center;
   background: 
-    radial-gradient(circle at 50% 48%, rgba(28, 19, 14, 0.25) 0%, rgba(22, 14, 10, 0.72) 100%),
+    radial-gradient(circle at 50% 48%, rgba(10, 10, 10, 0.2) 0%, rgba(5, 5, 5, 0.82) 100%),
     url('assets/hero-bg.png') center center / cover no-repeat;
   color: var(--paper);
   overflow: hidden;
@@ -110,12 +111,20 @@ body.participating .top{
   align-items:center;
 }
 .eyebrow{
-  color:#dfd0c0;
+  color:var(--gold);
   font-size:12px;
   letter-spacing:.22em;
   font-weight:600;
   text-transform:uppercase;
+  margin-bottom:12px;
+  position:relative;
 }
+.eyebrow::before, .eyebrow::after{
+  content:'';position:absolute;top:50%;width:35px;height:1px;background:rgba(206,177,139,0.35);
+}
+.eyebrow::before{right:calc(100% + 14px)}
+.eyebrow::after{left:calc(100% + 14px)}
+
 .hero h1,.stage h2,.thanks h2{
   font-family:'Cinzel Decorative',Georgia,serif;
   font-weight:700;
@@ -125,24 +134,24 @@ body.participating .top{
 .hero h1{
   font-size:clamp(36px,5vw,70px);
   max-width:860px;
-  margin:20px auto 22px;
+  margin:10px auto 22px;
   color:#fbf7f2;
-  text-shadow:0 8px 32px rgba(0,0,0,0.35);
+  text-shadow:0 8px 32px rgba(0,0,0,0.6);
 }
 .hero h1 em,.stage h2 em,.thanks h2 em{
-  color:#dfc2a0;
+  color:var(--gold-light);
   font-style:normal;
 }
 .hero p{
   max-width:560px;
-  color:#e4d9cf;
+  color:#d4cbc1;
   margin:0 auto;
   font-size:16px;
   line-height:1.65;
-  text-shadow:0 4px 18px rgba(0,0,0,0.45);
+  text-shadow:0 4px 18px rgba(0,0,0,0.6);
 }
 
-/* Botão Participar */
+/* Botão Participar Badass (Preto e Dourado) */
 .hero-action{
   position:relative;
   overflow:hidden;
@@ -150,19 +159,19 @@ body.participating .top{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  min-width:190px;
-  padding:16px 42px;
+  min-width:210px;
+  padding:16px 44px;
   border-radius:999px;
-  background:#fffdf9;
-  color:#362115;
+  background:#141414;
+  color:#fcf9f5;
   font-size:16px;
   font-weight:700;
-  letter-spacing:.01em;
-  border:2px solid #d4b083;
+  letter-spacing:.04em;
+  border:1px solid #ceb18b;
   box-shadow:
-    0 0 0 4px rgba(212, 176, 131, 0.18),
-    0 12px 32px rgba(0, 0, 0, 0.45),
-    0 0 28px rgba(226, 189, 141, 0.25);
+    0 0 0 3px rgba(206, 177, 131, 0.15),
+    0 12px 32px rgba(0, 0, 0, 0.65),
+    0 0 30px rgba(206, 177, 131, 0.2);
   transition:
     transform 0.75s var(--silk),
     box-shadow 0.75s var(--silk),
@@ -176,19 +185,19 @@ body.participating .top{
   left:-100%;
   width:65%;
   height:100%;
-  background:linear-gradient(90deg, transparent, rgba(218, 180, 131, 0.35), transparent);
+  background:linear-gradient(90deg, transparent, rgba(206, 177, 131, 0.35), transparent);
   transform:skewX(-22deg);
   transition:left 0.85s var(--silk);
   pointer-events:none;
 }
 .hero-action:hover{
   transform:translateY(-4px) scale(1.03);
-  background:#ffffff;
-  border-color:#e5c59b;
+  background:#1e1a17;
+  border-color:#e2bd8d;
   box-shadow:
-    0 0 0 6px rgba(226, 189, 141, 0.28),
-    0 18px 42px rgba(0, 0, 0, 0.52),
-    0 0 38px rgba(235, 199, 152, 0.45);
+    0 0 0 5px rgba(226, 189, 141, 0.25),
+    0 18px 42px rgba(0, 0, 0, 0.75),
+    0 0 40px rgba(226, 189, 141, 0.4);
 }
 .hero-action:hover::after{
   left:140%;
@@ -203,7 +212,7 @@ body.participating .top{
 }
 .secondary::before,.vote::before{
   content:'';position:absolute;inset:0;
-  background:linear-gradient(120deg,#f1d9bf 0%,#d8b288 55%,#c4976c 100%);
+  background:linear-gradient(120deg,#e2bd8d 0%,#ceb18b 55%,#b8976f 100%);
   opacity:0;
   transition:opacity 0.75s var(--silk);
   z-index:-1;
@@ -259,7 +268,9 @@ body.participating .top{
 
 .stage-title{text-align:center}
 .stage h2{font-size:clamp(26px,4vw,50px);margin:0 0 14px;color:var(--ink)}
+body.participating .stage h2{color:#362115}
 .stage-intro{margin:0 auto 36px;max-width:620px;text-align:center;font-size:14px;line-height:1.8;color:var(--muted)}
+body.participating .stage-intro{color:#7d6657}
 .choices{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
 
 .choice-wrap{
@@ -268,7 +279,7 @@ body.participating .top{
   animation-delay:calc(var(--n) * 65ms);
 }
 
-/* Caixinhas com elevação lenta, suave e contínua */
+/* Caixinhas refinadas */
 .choice{
   width:100%;min-width:0;min-height:310px;padding:18px 18px 20px;border:1px solid rgba(79,63,53,.075);
   text-align:left;background:linear-gradient(180deg,#fffefb 0%,#f7f1e8 100%);
@@ -327,13 +338,29 @@ body.participating .top{
 }
 
 .card-top{position:relative;z-index:2}
-.photo{height:150px;border-radius:22px;position:relative;overflow:hidden;margin-bottom:16px;background-color:#eadfcf;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 -10px 24px rgba(73,45,28,.06)}
+.photo{
+  height:150px;
+  border-radius:22px;
+  position:relative;
+  overflow:hidden;
+  margin-bottom:16px;
+  background-color:#f4eee6;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 -10px 24px rgba(73,45,28,.06);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 .photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.04) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,.08) 100%);pointer-events:none}
 .photo-img{
-  width:100%;height:100%;display:block;object-fit:cover;object-position:center center;
-  transform:scale(1.01);
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:contain;
+  object-position:center center;
+  transform:scale(1);
   transition:transform 1.35s var(--silk), filter 0.9s ease;
-  filter:saturate(1.03) contrast(1.02)
+  filter:saturate(1.03) contrast(1.02);
+  padding:8px;
 }
 .choice:hover .photo-img{transform:scale(1.06)}
 .product-chip{
@@ -342,8 +369,8 @@ body.participating .top{
   backdrop-filter:blur(4px);font-size:10px;font-weight:800;letter-spacing:.15em;color:#4a3020;text-transform:uppercase;
   box-shadow:0 6px 16px rgba(64,42,27,.06);z-index:2
 }
-.choice h3{position:relative;z-index:2;font-family:'Cinzel Decorative',Georgia,serif;letter-spacing:-.01em;font-size:19px;font-weight:700;line-height:1.2;margin:0 0 9px;color:var(--ink)}
-.choice p{position:relative;z-index:2;margin:0;color:var(--muted);line-height:1.5;font-size:12px;min-height:36px}
+.choice h3{position:relative;z-index:2;font-family:'Cinzel Decorative',Georgia,serif;letter-spacing:-.01em;font-size:19px;font-weight:700;line-height:1.2;margin:0 0 9px;color:#362115}
+.choice p{position:relative;z-index:2;margin:0;color:#7d6657;line-height:1.5;font-size:12px;min-height:36px}
 .choose{
   position:relative;z-index:2;display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:8px 14px;border-radius:40px;
   background:#eee9df;color:#4a3020;font-size:11px;font-weight:700;
@@ -362,6 +389,7 @@ body.participating .top{
   background:transparent;border:1px solid #c5b6a4;border-radius:99px;padding:15px 25px;color:#4a3020;font-weight:700;
   transition:color 0.65s ease, transform 0.85s var(--silk), box-shadow 0.85s ease, border-color 0.65s ease
 }
+body.participating .secondary{border-color:#c5b6a4;color:#4a3020}
 .secondary:hover{color:#362115;border-color:#ddcab4;transform:translateY(-3px);box-shadow:0 12px 28px rgba(67,46,30,.08)}
 .secondary:hover::before{opacity:1}
 .vote{
@@ -379,11 +407,11 @@ body.participating .top{
   animation:card-in 0.85s var(--silk) both;
 }
 .thanks .seal{font-size:32px;color:#9e7552}
-.thanks h2{font-size:clamp(28px,4vw,42px);margin:15px 0;color:var(--ink)}
-.thanks p{line-height:1.8;color:var(--muted)}
-.thanks .summary{padding:15px 20px;border-radius:14px;background:#f2ece3;margin:24px auto;font-size:14px;color:var(--ink)}
+.thanks h2{font-size:clamp(28px,4vw,42px);margin:15px 0;color:#362115}
+.thanks p{line-height:1.8;color:#7d6657}
+.thanks .summary{padding:15px 20px;border-radius:14px;background:#f2ece3;margin:24px auto;font-size:14px;color:#362115}
 
-/* Rodapé e letras pequenas com o tom castanho escuro unificado (#1b130f) */
+/* Rodapé e letras pequenas com o tom preto puro (#0a0a0a) */
 .fine-print{
   display:block;
   text-align:center;
@@ -391,8 +419,8 @@ body.participating .top{
   font-size:11px;
   line-height:1.8;
   padding:26px 20px;
-  background:#1b130f;
-  border-top:1px solid rgba(255,255,255,0.06);
+  background:#0a0a0a;
+  border-top:1px solid rgba(206,177,139,0.12);
   transition:background-color 0.85s var(--velvet), color 0.5s ease;
 }
 body.participating .fine-print{
@@ -402,9 +430,18 @@ body.participating .fine-print{
 }
 footer{
   display:block;
-  background:#1b130f;
+  background:#0a0a0a;
   color:#c7b2a2;
   padding:26px 0;
+  border-top:1px solid rgba(206,177,139,0.08);
+}
+body.participating footer{
+  background:var(--cream);
+  color:#7d6657;
+  border-top:none;
+}
+body.participating footer strong{
+  color:#362115;
 }
 footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:11px;letter-spacing:.08em}
 footer strong{font-family:'Cinzel Decorative',Georgia,serif;font-weight:700;color:white;font-size:16px;letter-spacing:.04em}
@@ -479,7 +516,7 @@ const SUPABASE = {
 };
 
 const products = [
-  {id:'creatina',name:'Creatina',description:'Um clássico de quem treina, reinventado em goma.',tag:'Performance',image:'assets/supp-creatina.png'},
+  {id:'creatina',name:'Creatina',description:'Um clássico de quem treina, reinventado em goma.',tag:'Performance',image:'assets/supp-creatina.jpg'},
   {id:'multivitaminico',name:'Multivitamínico',description:'Várias vitaminas numa opção colorida e diária.',tag:'Rainbow',image:'assets/supp-multivitaminico.png'},
   {id:'magnesio',name:'Magnésio',description:'Um mineral essencial numa proposta mais calma.',tag:'Calm',image:'assets/supp-magnesio.png'},
   {id:'omega_3',name:'Ómega-3',description:'Uma categoria icónica num formato novo.',tag:'Balance',image:'assets/supp-omega_3.png'},
