@@ -8,7 +8,7 @@
 <title>Sthenos — A primeira goma começa contigo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Syne:wght@700;800&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
   --black:#0a0a0a;--black2:#121212;--dark-card:#141414;--gold:#ceb18b;--gold-light:#e2bd8d;
@@ -42,7 +42,7 @@ button:disabled{cursor:not-allowed}
 ::selection{background:var(--gold);color:var(--black)}
 .wrap{width:min(1250px,calc(100% - 72px));margin:0 auto}
 
-/* Barra de topo minimalista com efeito glow no logótipo */
+/* Barra de topo minimalista com glow dinâmico direto nas letras do Sthenos */
 .site-header{
   background:var(--black);
   border-bottom:1px solid rgba(206,177,139,0.12);
@@ -56,17 +56,15 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
 .wordmark-wrap{
   position:relative;
   display:inline-block;
-  padding:8px 12px;
-  border-radius:12px;
-  overflow:hidden;
   cursor:pointer;
   isolation:isolate;
+  padding:4px 2px;
 }
 .wordmark-wrap::before{
   content:'';
   position:absolute;
-  inset:-50%;
-  background:radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(206,177,139,0.28), transparent 55%);
+  inset:-30px;
+  background:radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(206,177,139,0.32), transparent 60%);
   opacity:0;
   transition:opacity 0.6s ease;
   z-index:0;
@@ -76,19 +74,20 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
   opacity:1;
 }
 .wordmark{
-  font:800 26px 'Syne',sans-serif;
-  letter-spacing:-.02em;
+  font:700 28px 'Cinzel Decorative',Georgia,serif;
+  letter-spacing:.04em;
   color:#fcf9f5;
   display:inline-block;
   position:relative;
   z-index:1;
-  transition:transform .5s var(--silk), color .4s ease;
+  transition:transform .5s var(--silk), color .4s ease, text-shadow .4s ease;
 }
 .wordmark-wrap:hover .wordmark{
   transform:scale(1.02);
   color:var(--gold-light);
+  text-shadow:0 0 22px rgba(206,177,139,0.45);
 }
-.wordmark-wrap:active .wordmark{transform:scale(.97)}
+.wordmark-wrap:active .wordmark{transform:scale(.96)}
 
 .header-right{display:flex;align-items:center;gap:20px}
 .header-label{font-size:11px;letter-spacing:.22em;color:var(--gold);font-weight:700;text-transform:uppercase}
@@ -138,7 +137,7 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
   letter-spacing:.25em;
   font-weight:800;
   text-transform:uppercase;
-  margin-bottom:12px;
+  margin-bottom:10px;
   position:relative;
 }
 .eyebrow::before, .eyebrow::after{
@@ -147,28 +146,28 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
 .eyebrow::before{right:calc(100% + 14px)}
 .eyebrow::after{left:calc(100% + 14px)}
 
-/* Título de Impacto Máximo com Syne (Força e Autoridade) */
+/* Título de Impacto em Montserrat Bold com a palavra "em tamanho" toda dourada */
 .hero h1{
-  font-family:'Syne',sans-serif;
+  font-family:'Montserrat',sans-serif;
   font-weight:800;
-  font-size:clamp(38px,5.2vw,70px);
-  max-width:900px;
-  margin:10px auto 20px;
+  font-size:clamp(34px,4.6vw,62px);
+  max-width:860px;
+  margin:8px auto 18px;
   color:#fbf7f2;
-  letter-spacing:-0.03em;
-  line-height:1.1;
-  text-shadow:0 10px 36px rgba(0,0,0,0.85);
+  letter-spacing:-0.02em;
+  line-height:1.15;
+  text-shadow:0 8px 32px rgba(0,0,0,0.8);
 }
 .hero h1 em{
   color:var(--gold-light);
   font-style:normal;
 }
 
-/* Títulos das etapas em Syne Bold (força atlética total) */
+/* Títulos das etapas em Montserrat Bold (força atlética) */
 .stage h2{
-  font-family:'Syne',sans-serif;
+  font-family:'Montserrat',sans-serif;
   font-weight:800;
-  font-size:clamp(28px,4.2vw,48px);
+  font-size:clamp(26px,4vw,44px);
   margin:0 0 14px;
   color:#fcf9f5;
   letter-spacing:-.02em;
@@ -202,20 +201,20 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
   text-shadow:0 4px 18px rgba(0,0,0,0.8);
 }
 
-/* Botão Participar Badass com Syne e Montserrat */
+/* Botão Participar Badass com Montserrat Bold */
 .hero-action{
   position:relative;
   overflow:hidden;
-  margin-top:30px;
+  margin-top:28px;
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  min-width:220px;
+  min-width:210px;
   padding:16px 44px;
   border-radius:999px;
   background:#141414;
   color:#fcf9f5;
-  font-family:'Syne',sans-serif;
+  font-family:'Montserrat',sans-serif;
   font-size:15px;
   font-weight:800;
   letter-spacing:.08em;
@@ -261,7 +260,7 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
 
 /* Botões secundários e de voto */
 .secondary,.vote{
-  position:relative;overflow:hidden;isolation:isolate;font-family:'Syne',sans-serif;text-transform:uppercase;letter-spacing:.06em;
+  position:relative;overflow:hidden;isolation:isolate;font-family:'Montserrat',sans-serif;text-transform:uppercase;letter-spacing:.06em;
 }
 .secondary::before,.vote::before{
   content:'';position:absolute;inset:0;
@@ -425,7 +424,7 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
 
 .choice:hover .photo-img{transform:scale(1.06)}
 
-.choice h3{position:relative;z-index:2;font-family:'Syne',sans-serif;letter-spacing:-.01em;font-size:18px;font-weight:800;line-height:1.2;margin:0 0 9px;color:#fcf9f5}
+.choice h3{position:relative;z-index:2;font-family:'Cinzel Decorative',Georgia,serif;letter-spacing:-.01em;font-size:19px;font-weight:700;line-height:1.2;margin:0 0 9px;color:#fcf9f5}
 .choice p{position:relative;z-index:2;margin:0;color:var(--muted);line-height:1.5;font-size:12px;font-weight:500;min-height:36px}
 .choose{
   position:relative;z-index:2;display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:8px 14px;border-radius:40px;
@@ -437,7 +436,7 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
 
 .flavor .choice{min-height:245px}
 .flavor .choice p{min-height:0}
-.flavor .choice h3{font-size:17px}
+.flavor .choice h3{font-size:18px}
 .flavor .choose{margin-top:12px}
 
 .stage-actions{margin-top:34px;display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap}
@@ -506,13 +505,13 @@ footer strong{font-family:'Cinzel Decorative',Georgia,serif;font-weight:700;colo
 }
 @media (max-width:560px){
   .wrap{width:calc(100% - 20px)}
-  .hero h1{font-size:clamp(28px,7vw,38px)}
+  .hero h1{font-size:clamp(26px,7vw,38px)}
   .hero p{font-size:13px}
   .choices{grid-template-columns:1fr;gap:14px}
   .choice{min-height:auto;padding:16px}
   .flavor .choice{min-height:auto}
   .photo{height:140px}
-  .choice h3{font-size:17px}
+  .choice h3{font-size:18px}
   .choice p{font-size:12px;min-height:0}
   footer .wrap{flex-direction:column;align-items:flex-start}
 }
@@ -533,7 +532,7 @@ footer strong{font-family:'Cinzel Decorative',Georgia,serif;font-weight:700;colo
 <div class="top" id="hero-section">
   <section class="hero wrap" aria-labelledby="hero-title">
     <div class="eyebrow">A escolha é tua</div>
-    <h1 id="hero-title">A força não se mede<br><em>em tamanho</em>.</h1>
+    <h1 id="hero-title">A força não se mede<br>em <em>tamanho.</em></h1>
     <p>Potência, foco e alta performance encapsulados numa nova geração de suplementos em gomas. Decide por onde começamos.</p>
     <a class="hero-action" href="#votacao" data-participate>Participar</a>
   </section>
@@ -677,7 +676,7 @@ const smoothScroller = (() => {
   };
 })();
 
-/* Efeito Glow interativo no Logótipo Sthenos */
+/* Efeito de partículas/glow interativo diretamente sob as letras do Sthenos */
 const logoWrap = document.getElementById('logo-wrap');
 logoWrap.addEventListener('pointermove', e => {
   const rect = logoWrap.getBoundingClientRect();
