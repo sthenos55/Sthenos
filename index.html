@@ -42,7 +42,7 @@ button:disabled{cursor:not-allowed}
 ::selection{background:var(--gold);color:var(--black)}
 .wrap{width:min(1250px,calc(100% - 72px));margin:0 auto}
 
-/* Barra de topo minimalista com glow dinâmico direto nas letras do Sthenos */
+/* Barra de topo minimalista com glow compacto e invisível no logótipo */
 .site-header{
   background:var(--black);
   border-bottom:1px solid rgba(206,177,139,0.12);
@@ -58,15 +58,17 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
   display:inline-block;
   cursor:pointer;
   isolation:isolate;
-  padding:4px 2px;
+  padding:6px 10px;
+  margin:-6px -10px;
+  border-radius:8px;
 }
 .wordmark-wrap::before{
   content:'';
   position:absolute;
-  inset:-30px;
-  background:radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(206,177,139,0.32), transparent 60%);
+  inset:0;
+  background:radial-gradient(circle 50px at var(--mx,50%) var(--my,50%), rgba(206,177,139,0.35), transparent 85%);
   opacity:0;
-  transition:opacity 0.6s ease;
+  transition:opacity 0.5s ease;
   z-index:0;
   pointer-events:none;
 }
@@ -85,7 +87,7 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
 .wordmark-wrap:hover .wordmark{
   transform:scale(1.02);
   color:var(--gold-light);
-  text-shadow:0 0 22px rgba(206,177,139,0.45);
+  text-shadow:0 0 18px rgba(206,177,139,0.4);
 }
 .wordmark-wrap:active .wordmark{transform:scale(.96)}
 
@@ -676,7 +678,7 @@ const smoothScroller = (() => {
   };
 })();
 
-/* Efeito de partículas/glow interativo diretamente sob as letras do Sthenos */
+/* Efeito de brilho concentrado e invisível à volta do Sthenos */
 const logoWrap = document.getElementById('logo-wrap');
 logoWrap.addEventListener('pointermove', e => {
   const rect = logoWrap.getBoundingClientRect();
