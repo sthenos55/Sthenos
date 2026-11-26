@@ -8,7 +8,7 @@
 <title>Sthenos — A primeira goma começa contigo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
   --black:#0a0a0a;--black2:#121212;--dark-card:#141414;--gold:#ceb18b;--gold-light:#e2bd8d;
@@ -25,7 +25,7 @@ body{
   margin:0;
   background:var(--black);
   color:var(--ink);
-  font-family:'DM Sans',Arial,sans-serif;
+  font-family:'Montserrat',Arial,sans-serif;
   -webkit-font-smoothing:antialiased;
   min-height:100vh;
   overflow-x:hidden;
@@ -63,9 +63,9 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
 .wordmark:hover{opacity:.82}
 .wordmark:active{transform:scale(.96)}
 .header-right{display:flex;align-items:center;gap:20px}
-.header-label{font-size:11px;letter-spacing:.22em;color:var(--gold);font-weight:600}
+.header-label{font-size:11px;letter-spacing:.22em;color:var(--gold);font-weight:700;text-transform:uppercase}
 
-/* Capa / Hero com texto mais acima para não tapar as gomas */
+/* Capa / Hero */
 .top {
   position: relative;
   min-height: calc(100vh - 76px);
@@ -107,8 +107,8 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
 .eyebrow{
   color:var(--gold);
   font-size:12px;
-  letter-spacing:.22em;
-  font-weight:600;
+  letter-spacing:.25em;
+  font-weight:800;
   text-transform:uppercase;
   margin-bottom:10px;
   position:relative;
@@ -141,11 +141,12 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
   color:#d4cbc1;
   margin:0 auto;
   font-size:15px;
+  font-weight:500;
   line-height:1.6;
   text-shadow:0 4px 18px rgba(0,0,0,0.8);
 }
 
-/* Botão Participar Badass (Preto e Dourado) */
+/* Botão Participar Badass com Montserrat Bold */
 .hero-action{
   position:relative;
   overflow:hidden;
@@ -154,13 +155,15 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
   align-items:center;
   justify-content:center;
   min-width:210px;
-  padding:15px 42px;
+  padding:16px 44px;
   border-radius:999px;
   background:#141414;
   color:#fcf9f5;
-  font-size:16px;
-  font-weight:700;
-  letter-spacing:.04em;
+  font-family:'Montserrat',sans-serif;
+  font-size:15px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
   border:1px solid #ceb18b;
   box-shadow:
     0 0 0 3px rgba(206, 177, 131, 0.15),
@@ -202,7 +205,7 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
 
 /* Botões secundários e de voto */
 .secondary,.vote{
-  position:relative;overflow:hidden;isolation:isolate;
+  position:relative;overflow:hidden;isolation:isolate;font-family:'Montserrat',sans-serif;text-transform:uppercase;letter-spacing:.06em;
 }
 .secondary::before,.vote::before{
   content:'';position:absolute;inset:0;
@@ -212,7 +215,7 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
   z-index:-1;
 }
 
-/* Área de Votação (Ecrã dinâmico) */
+/* Área de Votação */
 .canvas{
   position:relative;
   margin-top:0;
@@ -262,7 +265,7 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
 
 .stage-title{text-align:center}
 .stage h2{font-size:clamp(26px,4vw,50px);margin:0 0 14px;color:#fcf9f5}
-.stage-intro{margin:0 auto 36px;max-width:620px;text-align:center;font-size:14px;line-height:1.8;color:var(--muted)}
+.stage-intro{margin:0 auto 36px;max-width:620px;text-align:center;font-size:14px;font-weight:500;line-height:1.8;color:var(--muted)}
 .choices{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
 
 .choice-wrap{
@@ -271,7 +274,7 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
   animation-delay:calc(var(--n) * 65ms);
 }
 
-/* Caixinhas pretas refinadas com brilho dourado no hover */
+/* Caixinhas pretas com brilho dourado */
 .choice{
   width:100%;min-width:0;min-height:310px;padding:18px 18px 20px;border:1px solid rgba(206,177,139,0.18);
   text-align:left;background:linear-gradient(180deg,#141414 0%,#0e0e0e 100%);
@@ -311,7 +314,6 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
   transform:translate3d(0,-8px,0) scale(1.012);
 }
 
-/* Número no canto inferior direito */
 .choice .num{
   display:block;
   font-size:11px;
@@ -344,20 +346,19 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
 }
 .photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.02) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,.25) 100%);pointer-events:none}
 
-/* Estilo para frascos de suplementos */
+/* Imagens de suplementos perfeitamente centradas e a preencher a caixa (object-fit: cover) */
 .photo-img.product-art {
   width:100%;
   height:100%;
   display:block;
-  object-fit:contain;
+  object-fit:cover;
   object-position:center center;
-  transform:scale(1);
+  transform:scale(1.01);
   transition:transform 1.35s var(--silk), filter 0.9s ease;
   filter:saturate(1.05) contrast(1.05);
-  padding:8px;
 }
 
-/* Estilo para imagens de sabores */
+/* Imagens de sabores mantêm o excelente preenchimento original */
 .photo-img.flavor-art {
   width:100%;
   height:100%;
@@ -370,17 +371,12 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
 }
 
 .choice:hover .photo-img{transform:scale(1.06)}
-.product-chip{
-  position:absolute;left:16px;bottom:14px;display:inline-flex;align-items:center;gap:8px;
-  padding:8px 12px;border-radius:999px;background:rgba(18,18,18,0.82);
-  backdrop-filter:blur(6px);font-size:10px;font-weight:800;letter-spacing:.15em;color:var(--gold);text-transform:uppercase;
-  box-shadow:0 6px 16px rgba(0,0,0,0.4);z-index:2;border:1px solid rgba(206,177,139,0.2);
-}
+
 .choice h3{position:relative;z-index:2;font-family:'Cinzel Decorative',Georgia,serif;letter-spacing:-.01em;font-size:19px;font-weight:700;line-height:1.2;margin:0 0 9px;color:#fcf9f5}
-.choice p{position:relative;z-index:2;margin:0;color:var(--muted);line-height:1.5;font-size:12px;min-height:36px}
+.choice p{position:relative;z-index:2;margin:0;color:var(--muted);line-height:1.5;font-size:12px;font-weight:500;min-height:36px}
 .choose{
   position:relative;z-index:2;display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:8px 14px;border-radius:40px;
-  background:#1e1a17;color:var(--gold);font-size:11px;font-weight:700;border:1px solid rgba(206,177,139,0.25);
+  background:#1e1a17;color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.05em;border:1px solid rgba(206,177,139,0.25);
   transition:all 0.75s var(--silk)
 }
 .choice:hover .choose,
@@ -393,19 +389,19 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
 
 .stage-actions{margin-top:34px;display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap}
 .secondary{
-  background:transparent;border:1px solid rgba(206,177,139,0.35);border-radius:99px;padding:15px 25px;color:var(--gold);font-weight:700;
+  background:transparent;border:1px solid rgba(206,177,139,0.35);border-radius:99px;padding:15px 25px;color:var(--gold);font-weight:800;font-size:13px;
   transition:all 0.65s ease
 }
 .secondary:hover{color:#fcf9f5;border-color:var(--gold);transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,0.5)}
 .secondary:hover::before{opacity:1}
 .vote{
-  border:0;border-radius:99px;padding:16px 35px;background:var(--gold);color:var(--black);font-weight:800;
+  border:0;border-radius:99px;padding:16px 35px;background:var(--gold);color:var(--black);font-weight:900;font-size:13px;
   transition:all 0.85s var(--silk)
 }
 .vote:hover:not(:disabled){transform:translateY(-3px);box-shadow:0 12px 27px rgba(206,177,139,0.35);background:var(--gold-light)}
 .vote:hover::before{opacity:1}
 .vote:disabled{opacity:.48}
-.status{font-size:13px;line-height:1.6;text-align:center;min-height:24px;margin-top:20px;color:var(--gold)}
+.status{font-size:13px;font-weight:600;line-height:1.6;text-align:center;min-height:24px;margin-top:20px;color:var(--gold)}
 .status.error{color:#e57373}.status.success{color:#81c784}
 .thanks{
   text-align:center;background:#141414;border:1px solid rgba(206,177,139,0.2);max-width:670px;margin:30px auto 0;padding:48px;border-radius:26px;
@@ -414,15 +410,16 @@ header{height:76px;display:flex;align-items:center;justify-content:space-between
 }
 .thanks .seal{font-size:32px;color:var(--gold)}
 .thanks h2{font-size:clamp(28px,4vw,42px);margin:15px 0;color:#fcf9f5}
-.thanks p{line-height:1.8;color:var(--muted)}
-.thanks .summary{padding:15px 20px;border-radius:14px;background:#1c1917;border:1px solid rgba(206,177,139,0.25);margin:24px auto;font-size:14px;color:var(--gold-light)}
+.thanks p{line-height:1.8;font-weight:500;color:var(--muted)}
+.thanks .summary{padding:15px 20px;border-radius:14px;background:#1c1917;border:1px solid rgba(206,177,139,0.25);margin:24px auto;font-size:14px;font-weight:700;color:var(--gold-light)}
 
-/* Rodapé e letras pequenas */
+/* Rodapé */
 .fine-print{
   display:block;
   text-align:center;
   color:#736555;
   font-size:11px;
+  font-weight:500;
   line-height:1.8;
   padding:26px 20px;
   background:#0a0a0a;
@@ -435,8 +432,8 @@ footer{
   padding:26px 0;
   border-top:1px solid rgba(206,177,139,0.08);
 }
-footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:11px;letter-spacing:.08em}
-footer strong{font-family:'Cinzel Decorative',Georgia,serif;font-weight:700;color:white;font-size:16px;letter-spacing:.04em}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+footer strong{font-family:'Cinzel Decorative',Georgia,serif;font-weight:700;color:white;font-size:16px;letter-spacing:.04em;text-transform:none}
 .hidden,[hidden]{display:none!important}
 
 @keyframes card-in{
@@ -508,14 +505,14 @@ const SUPABASE = {
 };
 
 const products = [
-  {id:'creatina',name:'Creatina',description:'Um clássico de quem treina, reinventado em goma.',tag:'Performance',image:'assets/supp-creatina.jpg'},
-  {id:'multivitaminico',name:'Multivitamínico',description:'Várias vitaminas numa opção colorida e diária.',tag:'Rainbow',image:'assets/supp-multivitaminico.png'},
-  {id:'magnesio',name:'Magnésio',description:'Um mineral essencial numa proposta mais calma.',tag:'Calm',image:'assets/supp-magnesio.png'},
-  {id:'omega_3',name:'Ómega-3',description:'Uma categoria icónica num formato novo.',tag:'Balance',image:'assets/supp-omega_3.png'},
-  {id:'colagenio',name:'Colagénio',description:'Um conceito pensado para o universo beauty.',tag:'Beauty',image:'assets/supp-colagenio.png'},
-  {id:'vitamina_d',name:'Vitamina D',description:'Uma vitamina solar, luminosa e simples.',tag:'Sun',image:'assets/supp-vitamina_d.png'},
-  {id:'ashwagandha',name:'Ashwagandha',description:'Botânico e terroso, inspirado na planta.',tag:'Botanical',image:'assets/supp-ashwagandha.png'},
-  {id:'melatonina',name:'Melatonina',description:'Uma opção orientada ao ritual de descanso.',tag:'Night',image:'assets/supp-melatonina.png'}
+  {id:'creatina',name:'Creatina',description:'Um clássico de quem treina, reinventado em goma.',image:'assets/supp-creatina.jpg'},
+  {id:'multivitaminico',name:'Multivitamínico',description:'Várias vitaminas numa opção colorida e diária.',image:'assets/supp-multivitaminico.png'},
+  {id:'magnesio',name:'Magnésio',description:'Um mineral essencial numa proposta mais calma.',image:'assets/supp-magnesio.png'},
+  {id:'omega_3',name:'Ómega-3',description:'Uma categoria icónica num formato novo.',image:'assets/supp-omega_3.png'},
+  {id:'colagenio',name:'Colagénio',description:'Um conceito pensado para o universo beauty.',image:'assets/supp-colagenio.png'},
+  {id:'vitamina_d',name:'Vitamina D',description:'Uma vitamina solar, luminosa e simples.',image:'assets/supp-vitamina_d.png'},
+  {id:'ashwagandha',name:'Ashwagandha',description:'Botânico e terroso, inspirado na planta.',image:'assets/supp-ashwagandha.png'},
+  {id:'melatonina',name:'Melatonina',description:'Uma opção orientada ao ritual de descanso.',image:'assets/supp-melatonina.png'}
 ];
 const flavors = [
   {id:'mirtilo',name:'Mirtilo',description:'Frutado e delicado.',image:'assets/flavor-mirtilo.png'},
@@ -626,7 +623,7 @@ const smoothScroller = (() => {
 })();
 
 function productArt(item){
-  return `<div class="photo"><img class="photo-img product-art" src="${clean(item.image)}" alt="" loading="lazy"><div class="product-chip">${clean(item.tag)}</div></div>`;
+  return `<div class="photo"><img class="photo-img product-art" src="${clean(item.image)}" alt="" loading="lazy"></div>`;
 }
 function flavorArt(item){
   return `<div class="photo"><img class="photo-img flavor-art" src="${clean(item.image)}" alt="" loading="lazy"></div>`;
@@ -733,7 +730,7 @@ async function enterVoting(){
 
   votingSection.classList.add('is-entering');
   votingSection.hidden = false;
-  heroSection.style.display = 'none'; // Esconde a capa completamente para a votação ocupar o ecrã
+  heroSection.style.display = 'none';
   heroSection.classList.remove('is-leaving');
   smoothScroller.scrollTo(0, true);
   render();
@@ -757,7 +754,7 @@ async function resetToHome(){
   sessionStorage.removeItem('sthenos-vote-id');
   screen = 0;
 
-  heroSection.style.display = 'flex'; // Restaura a capa
+  heroSection.style.display = 'flex';
   heroSection.classList.add('is-entering');
   votingSection.hidden = true;
   votingSection.classList.remove('is-leaving');
