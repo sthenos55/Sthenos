@@ -327,29 +327,13 @@ body.participating .top{
 }
 
 .card-top{position:relative;z-index:2}
-.photo{
-  height:150px;
-  border-radius:22px;
-  position:relative;
-  overflow:hidden;
-  margin-bottom:16px;
-  background-color:#f4eee6;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 -10px 24px rgba(73,45,28,.06);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
+.photo{height:150px;border-radius:22px;position:relative;overflow:hidden;margin-bottom:16px;background-color:#eadfcf;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 -10px 24px rgba(73,45,28,.06)}
 .photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.04) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,.08) 100%);pointer-events:none}
 .photo-img{
-  width:100%;
-  height:100%;
-  display:block;
-  object-fit:contain;
-  object-position:center center;
-  transform:scale(1);
+  width:100%;height:100%;display:block;object-fit:cover;object-position:center center;
+  transform:scale(1.01);
   transition:transform 1.35s var(--silk), filter 0.9s ease;
-  filter:saturate(1.03) contrast(1.02);
-  padding:8px;
+  filter:saturate(1.03) contrast(1.02)
 }
 .choice:hover .photo-img{transform:scale(1.06)}
 .product-chip{
@@ -495,7 +479,7 @@ const SUPABASE = {
 };
 
 const products = [
-  {id:'creatina',name:'Creatina',description:'Um clássico de quem treina, reinventado em goma.',tag:'Performance',image:'assets/supp-creatina.jpg'},
+  {id:'creatina',name:'Creatina',description:'Um clássico de quem treina, reinventado em goma.',tag:'Performance',image:'assets/supp-creatina.png'},
   {id:'multivitaminico',name:'Multivitamínico',description:'Várias vitaminas numa opção colorida e diária.',tag:'Rainbow',image:'assets/supp-multivitaminico.png'},
   {id:'magnesio',name:'Magnésio',description:'Um mineral essencial numa proposta mais calma.',tag:'Calm',image:'assets/supp-magnesio.png'},
   {id:'omega_3',name:'Ómega-3',description:'Uma categoria icónica num formato novo.',tag:'Balance',image:'assets/supp-omega_3.png'},
